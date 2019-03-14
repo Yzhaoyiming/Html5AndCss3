@@ -1,1 +1,41 @@
-# Html5AndCss3
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>form属性示例</title>
+  	<meta charset="UTF-8">
+</head>
+<body>
+		<h1>毕业生信息</h1>
+	<form id="testform" method="get" action="">
+		<fieldset style="margin-bottom: 20px;">
+			<legend style="color:red">
+				<!-- 设置区域的标题 -->
+				学生信息
+			</legend><br/>
+			姓&nbsp;&nbsp;名：<input type="text" name="name1" autofocus="autofocus" placeholder="请输入姓名" required/>&nbsp;<span style="color:red">*</span><br/>
+			学&nbsp;&nbsp;号：<input type="text" name="num1" placeholder="请输入学号" required/>&nbsp;<span style="color:red">*</span><br/>
+			手&nbsp;&nbsp;机：<input type="text" name="tel1" placeholder="请输入手机" required/>&nbsp;<span style="color:red">*</span><br/>
+			邮&nbsp;&nbsp;箱：<input type="text" name="email" placeholder="请输入邮箱" required/>&nbsp;<span style="color:red">*</span>
+			<br/>
+		</fieldset>	
+		<fieldset style="margin-bottom: 20px;">
+			<legend style="color:red">
+				<!-- 设置区域的标题 -->
+				录取情况
+			</legend><br/>
+			录取学校：<input type="text" name="school" placeholder="" /><br/>
+			入学成绩：<input type="text" name="score" placeholder="" /><br/>
+			入学时间：<input type="date" name="time" placeholder="" />
+			<br/>
+
+		</fieldset>
+		<input type="submit" value="提交"/>
+
+			
+	</form>
+	
+
+</body>
+</html>
+
+
