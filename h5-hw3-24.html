@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <input id="memo" type="select" name="查询内容" style="width:190px;height:40px;" placeholder="请输入想查找的商品">
+    <input type="button" value="搜索" style="color:rgb(204, 200, 200);width:150px;height:40px;" onclick="saveStorage('memo');" /> 
+    <br><span>最近搜索</span>
+    <div style="position:relative;width:400px;">
+        <p id="msg"></p>          
+        <input type="button" value="x" style="border:none; color:white; position: absolute;right:0px;bottom:0px;" onclick="clearStorage('msg');" />
+    </div>
+</body>
+<script type="text/javascript">
+    function saveStorage(id) {
+        var data = document.getElementById(id).value;
+        var time = new Date().getTime();
+        localStorage.setItem(time,data);
+        loadStorage('msg');
+    }
+
+    function loadStorage(id) {
+        var result = '<div style="width:350px;">';
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            var date = new Date();
+            result += '<div style="border:0.4px solid rgb(204, 200, 200);background-color:rgb(230, 225, 225);margin-right:15px;margin-bottom:15px;float:left;">' + value + '</div>';
+        }
+        
+
+        result += '</div>';
+        var target = document.getElementById(id);
+        target.innerHTML = result;
+    }
+    function clearStorage() {
+        localStorage.clear();
+        alert("清空所有历史纪录？");
+        loadStorage('msg');
+    }
+</script>
+
+</html>
