@@ -10,7 +10,7 @@
     <input id="memo" type="select" name="查询内容" style="width:190px;height:40px;" placeholder="请输入想查找的商品">
     <input type="button" value="搜索" style="color:rgb(204, 200, 200);width:150px;height:40px;" onclick="saveStorage('memo');" /> 
     <br><span>最近搜索</span>
-    <div style="position:relative;width:470px;">
+    <div style="position:relative;width:450px;">
         <p id="msg"></p>          
         <input type="button" value="x" style="border:none; color:white; position: absolute;right:0px;bottom:0px;" onclick="clearStorage('msg');" />
     </div>
@@ -24,7 +24,7 @@
     }
 
     function loadStorage(id) {
-        var result = '<div style="width:450px;">';
+        var result = '<div style="width:430px;">';
         for (var i = 0; i < localStorage.length; i++) {
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
