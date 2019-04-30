@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=deice-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮奖</title>
+    <style>
+            #canvas{
+                position: absolute; 
+                left: 50;
+                top: 0;
+            } 
+            #canvas1{
+            position: absolute; 
+            left: 50;
+            top: 0;
+            border: 1px solid rgb(29, 28, 28);              
+
+            }
+
+    </style>
+</head>
+<body>
+        <canvas id="canvas" width="400" height="200"></canvas>
+        <canvas id="canvas1" width="400" height="200">
+
+                你的浏览器不支持canvas
+        </canvas>   
+</body>
+<script>
+    window.onload = function () {   
+    var c=document.getElementById("canvas");
+    var context=c.getContext("2d");
+    var img=new Image();
+    img.src='image/timg.jpg';
+    img.onload=function(){
+        context.drawImage(img,0,0,400,200);
+    }
+    var c1=document.getElementById("canvas1");
+    var context1=c1.getContext("2d");
+    context1.fillStyle="gray";
+    context1.fillRect(0,0,400,200);
+    context1.fill();    
+    context1.globalCompositeOperation='destination-out'; 
+    //点击鼠标
+    var tag=true;
+    canvas1.onmousedown=function(e){
+        var x=e.clientX;
+        var y=e.clientY;
+        context1.beginPath();
+        context1.arc(x, y, 60, 0,2*Math.PI,true);
+        context1.fill();
+        context1.closePath();
+        tag=false;
+    }
+    //移动鼠标
+    canvas1.onmousemove=function(e){
+        if(!tag){
+            var x=e.clientX;
+            var y=e.clientY;
+            context1.beginPath();
+            context1.arc(x, y, 60, 0,2*Math.PI,true);
+            context1.fill();
+            context1.closePath();
+        }
+    }
+    document.onmouseup=function(){
+        tag=true;
+        j=0;
+        var ev = context1.getImageData(0,0,400,200)
+        for(var i=0;i<ev.data.length;i++){
+            if(ev.data[i]==0)
+                j++;
+        }
+        if(j > ev.data.length*0.85){
+            context1.fillRect(0,0,400,200);
+            context1.fill();
+        }
+    }
+}
+
+
+
+
+
+
+
+    
+</script>
+</html>
