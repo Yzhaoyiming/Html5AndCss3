@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3变形与动画 </title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        body{
+            padding:50px;
+        }
+        .box{
+            width: 420px;
+            height: 485px;
+            overflow:hidden;
+            position:relative;
+        }
+        .box img{
+            transform: scale(1,1);
+            width: 460px;
+            height: 300px;
+
+        }
+        .box:hover img{
+            opacity: 0.7;
+            transform: scale(1.3,1.3);
+            box-shadow: 0 0 30px rgb(201, 85, 85) inset;
+        }
+        .box div{
+            width: 380px;
+            height: 320px;
+            padding: 20px;            
+            position:absolute;
+            left:0px;
+            top:300px;
+            background:hsla(0, 9%, 98%);
+        }
+        
+        .box:hover div{
+            transform: translate(0px,-140px);
+        }
+        span{
+            color: rgb(226, 126, 32);
+            font-size:20px;
+        }
+        p{
+            height: 30px;
+            margin-bottom: 7px;
+            line-height: 30px;
+        }
+        .b{
+            color: rgba(104, 107, 107);
+            position:absolute;
+            font-size: 10px;
+            left:0px;
+            bottom:0px;
+            width: 380px;
+            height: 30px;
+            padding-top: 50px;
+            padding-left: 20px;
+            background:hsla(0, 9%, 98%);
+
+        }
+        .c{
+            z-index: 5;
+            position: absolute;
+            right:40px;
+            top: 40px; 
+	        border:solid 1px rgb(235, 102, 40);
+	        border-radius: 50px 50px 50px 50px;
+	        background-color: rgb(235, 102, 40);
+	        width: 50px;
+            height: 50px;
+            color: aliceblue;
+            text-align: center;
+            font-size: 15px;         
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="image/zhanqiao.jpg" alt="" width="460" height="300"/>
+        
+        <div>
+            <h2>青岛栈桥</h2>   
+            <br>      
+            <span>国家AAAA级旅游景区</span>
+            <p>青岛栈桥是青岛海滨风景区的景点之一，是国务院于1882年首批公示的国家级风景名胜区。青岛栈桥位于游人如织的青岛中山路南端，桥身从海岸探入如弯月般的青岛湾深处。桥身供游人参观并在此停靠旅游船，由此乘船可看海上青岛。</p>
+
+        </div>
+        <!-- <div id="div1"></div> -->
+        <span class="b">
+            10分钟前&nbsp;&nbsp;&nbsp;123评论
+        </span>
+        <ul class="c">
+            <li>15</li>
+            <li>五月</li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+    
+</script>
+</html>
